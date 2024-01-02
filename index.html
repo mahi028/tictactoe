@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="Play a game of tictactoe with your friend and have some fun.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="display"><p> <span class="xname">X</span> = <span class="xwin">0</span> | <span class="yname">Y</span> = <span class="ywin">0</span> <br> Draw = <span class="drw">0</span></p></div>
+        <div class="container">
+            <div class="box box00" onclick="clicked(0,0)"></div>
+            <div class="box box01" onclick="clicked(0,1)"></div>
+            <div class="box box02" onclick="clicked(0,2)"></div>
+            <div class="box box10" onclick="clicked(1,0)"></div>
+            <div class="box box11" onclick="clicked(1,1)"></div>
+            <div class="box box12" onclick="clicked(1,2)"></div>
+            <div class="box box20" onclick="clicked(2,0)"></div>
+            <div class="box box21" onclick="clicked(2,1)"></div>
+            <div class="box box22" onclick="clicked(2,2)"></div>
+        </div>
+        <div class="controls">
+            <button class="btn reset" onclick="reset()">Reset Game</button>
+            <button class="btn newGame" onclick="newGame()">Start a new game</button>
+        </div>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
