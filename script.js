@@ -106,7 +106,5 @@ function winAnime(ar){
                 console.log('something\'s wrong')
                 break;
         }
-
-
     }
 }

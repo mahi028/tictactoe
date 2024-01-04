@@ -18,10 +18,16 @@ function updateWinner(winner){
         winX+=1
         xwin.innerHTML=winX
         winAnime(winner)
+        x=setTimeout(() => {
+            reset()
+        }, 500);
     }else if(winner[0]=='o'){
         winY+=1
         ywin.innerHTML=winY
         winAnime(winner)
+        x=setTimeout(() => {
+            reset()
+        }, 500);
     }
 }
 
