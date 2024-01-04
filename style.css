@@ -18,6 +18,7 @@ main{
     grid-template-columns: repeat(3,100px);
 }
 .box{
+    position: relative;
     margin: 2px;
     border: none;
     border-radius: 5px;
@@ -32,15 +33,14 @@ main{
 .cross{
     position: relative;
     border: 2px solid black;
-    width: 70px;
-    top: 50%;
-    left:12%;
-    
+    width: 100px;
 }
 .c1{
+    top: 50%;  
     transform: rotate(45deg);
 }
 .c2{
+    top: 45%;
     transform: rotate(135deg);
 }
 .circle{
@@ -91,4 +91,32 @@ main{
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+.line{
+    border: 2px black solid;
+    position: absolute;
+    z-index: 1;
+}
+.rline{
+    top: 50%;
+    width: 95px;
+    height: 1px;
+}
+.cline{
+    left: 50%;
+    width: 1px;
+    height: 95px;
+}
+.mdiag{
+    top: 50%;
+    width: 100px;
+    height: 1px;
+    transform: rotate(45deg);
+}
+.sdiag{
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100px;
+    transform: rotate(45deg);
 }

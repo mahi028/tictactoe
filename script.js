@@ -4,8 +4,13 @@ const ywin = document.querySelector('.ywin');
 const drw = document.querySelector('.drw');
 const xname = document.querySelector('.xname');
 const yname = document.querySelector('.yname');
-const shapeX='<div class="cross c1"></div><div class="cross c2"></div>';
-const shapeO='<div class="circle"></div>';
+const shapeX = '<div class="cross c1"></div><div class="cross c2"></div>';
+const shapeO = '<div class="circle"></div>';
+const rline = '<div class="line rline"></div>';
+const cline = '<div class="line cline"></div>';
+const mdiag = '<div class="line mdiag"></div>';
+const sdiag = '<div class="line sdiag"></div>';
+
 let n=3;
 let tictactoe=createMatrix(n);
 let count=0;
@@ -57,54 +62,6 @@ function createMatrix(n){
     return matrix
 }
 
-function announceWinner(mat){
-    //checking for row
-    announce(tictactoe)
-    //cheaking for column
-    announce(transpose(tictactoe))
-    //cheacking for diagonal
-    announce(diag(tictactoe))
-    draw(tictactoe)
-}
-
-function announce(mat){
-    for(i of mat){
-        switch (win(i)) {
-            case 'x':
-                winX+=1
-                xwin.innerHTML=winX
-                reset()
-                break;
-            case 'o':
-                winY+=1
-                ywin.innerHTML=winY
-                reset()
-                break
-            default:
-                break;
-        }
-    }
-}
-
-function win(l){
-    let a = 0
-    let b = 0
-    for(i=0;i<n;i++){
-        if(l[i]=='x'){
-            a+=1
-        }else if(l[i]=='o'){
-            b+=1
-        }
-    }
-    if(a==n){
-        return 'x'
-    }else if(b==n){
-        return 'o'
-    }else{
-        return undefined
-    }
-}
-
 function transpose(mat){
     let tMat=[]
     for(i=0;i<n;i++){
@@ -117,30 +74,39 @@ function transpose(mat){
     return tMat
 }
 
-function diag(mat){
-    let dMat=[]
-    let row=[]
-    for(i=0;i<n;i+=1){
-        row.push(mat[i][i])
+function isEqualArr(arr1,arr2){
+    al1=arr1.length
+    al2=arr2.length
+    if(al1!=al2){
+        return false
     }
-    dMat.push(row)
-    row=[]
-    for(i=0;i<n;i+=1){
-       row.push(mat[i][n - i - 1])
-    } 
-    dMat.push(row)
-    return dMat
-}
-function draw(mat){
-    for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            if(mat[i][j]==0){
-                return false
-            } 
+    for(i=0;i<al1;i++){
+        if(arr1[i]!=arr2[i]){
+            return false
         }
-    }
-    nowin+=1
-    drw.innerHTML=nowin
+    }return true
+}
 
-    // reset()
+function winAnime(ar){
+    for(i=1;i<ar.length-1;i++){
+        switch (ar[ar.length-1]) {
+            case 'row':
+                document.querySelector(`.box${ar[i][0]}${ar[i][1]}`).innerHTML+=rline
+                break;
+            case 'col':
+                document.querySelector(`.box${ar[i][0]}${ar[i][1]}`).innerHTML+=cline
+                break;
+            case 'mdiag':
+                document.querySelector(`.box${ar[i][0]}${ar[i][1]}`).innerHTML+=mdiag
+                break;
+            case 'sdiag':
+                document.querySelector(`.box${ar[i][0]}${ar[i][1]}`).innerHTML+=sdiag
+                break;
+            default:
+                console.log('something\'s wrong')
+                break;
+        }
+
+
+    }
 }
