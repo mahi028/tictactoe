@@ -103,6 +103,7 @@ main{
     height: 1px;
 }
 .cline{
+    top: 0px;
     left: 50%;
     width: 1px;
     height: 95px;
