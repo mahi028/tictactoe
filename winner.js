@@ -23,7 +23,7 @@ function updateWinner(winner){
         }, 1000);
     }else if(winner[0]=='o'){
         winY+=1
-        ywin.innerHTML=winY
+        owin.innerHTML=winY
         winAnime(winner)
         x=setTimeout(() => {
             reset()

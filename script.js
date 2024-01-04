@@ -1,6 +1,6 @@
 const box = document.querySelectorAll('.box');
 const xwin = document.querySelector('.xwin');
-const ywin = document.querySelector('.ywin');
+const owin = document.querySelector('.ywin');
 const drw = document.querySelector('.drw');
 const xname = document.querySelector('.xname');
 const yname = document.querySelector('.yname');
@@ -45,7 +45,7 @@ function newGame(){
     winX=0
     xwin.innerHTML='0'
     winY=0
-    ywin.innerHTML='0'
+    owin.innerHTML='0'
     nowin=0
     drw.innerHTML='0'
 }
