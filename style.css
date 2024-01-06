@@ -1,13 +1,17 @@
 *{
     box-sizing: border-box;
     margin: 0px 0px;
-    font-family: sans-serif;
+    font-family: cursive;
+}
+h1{    
+    text-shadow: 2px 2px rgb(0 0 0 / 22%);
+    margin-top: 50px;
+    color: #05377abf;
 }
 main{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     row-gap: 20px;
     background-color: rgb(255, 0, 255);
